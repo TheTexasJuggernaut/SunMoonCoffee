@@ -63,6 +63,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ProductCatalog.mdf" />
+    <Content Include="App_Data\ProductCatalog_log.ldf">
+      <DependentUpon>ProductCatalog.mdf</DependentUpon>
+    </Content>
     <Content Include="Inventory.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
