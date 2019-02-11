@@ -54,7 +54,6 @@
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="addFoodToOrderBtn" runat="server" Text="Add to Order" />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:InventoryConnectionString %>" SelectCommand="SELECT [Id], [Product], [Calories], [Description], [Price], [Image] FROM [Table]"></asp:SqlDataSource>
         <br />
         <br />
         <asp:Label ID="foodDescription" runat="server" BackColor="#CCCCCC" ForeColor="#CC0066"></asp:Label>
