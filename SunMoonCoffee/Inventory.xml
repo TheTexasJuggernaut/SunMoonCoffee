@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<contact-info>
-  <contact1>
-    <name>Tanmay Patil</name>
-    <company>TutorialsPoint</company>
-    <phone>(011) 123-4567</phone>
-  </contact1>
+<Item-info>
+  <Coffee>
+    <Details>Its Fuel For Programmers</Details>
+    <Calories>10</Calories>
+    <Price>5.00</Price>
+  </Coffee>
 
-  <contact2>
-    <name>Manisha Patil</name>
-    <company>TutorialsPoint</company>
-    <phone>(011) 789-4567</phone>
-  </contact2>
-</contact-info>
+  <Latte>
+    <Details>Italian Coffee</Details>
+    <Calories>100</Calories>
+    <Price>6.00</Price>
+  </Latte>
+
+</Item-info>

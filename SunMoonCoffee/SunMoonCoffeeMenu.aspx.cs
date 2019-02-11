@@ -29,5 +29,10 @@ namespace SunMoonCoffee
          
             foodDescription.Text = dataModel.foodItems[FoodTypeDropDownList.SelectedItem.Text];
         }
+
+        protected void XmlDataSource1_Transforming(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,6 +44,7 @@
         <br />
         <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large" Text="Food Items"></asp:Label>
         <br />
+        <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/Inventory.xml" OnTransforming="XmlDataSource1_Transforming"></asp:XmlDataSource>
         <br />
         <br />
         <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged">
