@@ -84,6 +84,7 @@
     <Compile Include="DataModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SeedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SunMoonCoffeeMenu.aspx.cs">
       <DependentUpon>SunMoonCoffeeMenu.aspx</DependentUpon>
