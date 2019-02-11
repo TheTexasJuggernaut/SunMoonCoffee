@@ -16,21 +16,21 @@ namespace SunMoonCoffee
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegiConnectionString"].ConnectionString);
-                conn.Open();
-                string checkuser = "select count(*) from RegisterDataBase where StudentName='" + TextBox1.Text + "'";
-                SqlCommand cmd = new SqlCommand(checkuser, conn);
-                int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+            //if (IsPostBack)
+            //{
+            //    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProductCatalogConnectionString"].ConnectionString);
+            //    conn.Open();
+            //    string checkuser = "select count(*) from ProductCatalogConnectionString where StudentName='" + TextBox1.Text + "'";
+            //    SqlCommand cmd = new SqlCommand(checkuser, conn);
+            //    int temp = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
-                if (temp == 1)
-                {
-                    Response.Write("Student Already Exist");
-                }
+            //    if (temp == 1)
+            //    {
+            //        Response.Write("Student Already Exist");
+            //    }
 
-                conn.Close();
-            }
+            //    conn.Close();
+            //}
 
         }
 
@@ -39,7 +39,7 @@ namespace SunMoonCoffee
             try
             {
 
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegiConnectionString"].ConnectionString);
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ProductCatalogConnectionString"].ConnectionString);
                 conn.Open();
                 string insertQuery = "insert into RegisterDataBase(StudentName,Passwords,EmailId,Department,College)values (@studentname,@passwords,@emailid,@department,@college)";
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
