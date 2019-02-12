@@ -30,7 +30,7 @@
             <asp:ListItem Value="Large"></asp:ListItem>
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged">
+        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="Product" DataValueField="Product">
             <asp:ListItem Value="Coffee"></asp:ListItem>
             <asp:ListItem Value="Latte"></asp:ListItem>
             <asp:ListItem Value="Cappuccino"></asp:ListItem>
