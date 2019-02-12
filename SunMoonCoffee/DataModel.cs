@@ -6,13 +6,13 @@ using System.Web;
 namespace SunMoonCoffee
 {
     public class DataModel
-    { //Up 
+    {
 
         public Dictionary<string, string> coffeeItems = new Dictionary<string, string>() {
             { "Coffee", "Sun & Moon Coffee In House Brew" },
-            { "Latte", "Latte" },
-            { "Cappuccino", "Cappucino" },
-            { "Espresso", "Espresso" },
+            { "Latte", "A coffee drink made with espresso and steamed milk." },
+            { "Cappuccino", "Traditional cappuccino of a single espresso, on which the barista pours the hot foamed milk." },
+            { "Espresso", "Full-flavored, concentrated form of coffee, served in shots." },
             { "Iced Latte", "Iced Latte" },
         };
 
@@ -26,7 +26,6 @@ namespace SunMoonCoffee
 
 
     }
-
 
 
 }
