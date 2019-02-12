@@ -6,7 +6,7 @@ using System.Web;
 namespace SunMoonCoffee
 {
     public class DataModel
-    {
+    { //Update
 
         public Dictionary<string, string> coffeeItems = new Dictionary<string, string>() {
             { "Coffee", "Sun & Moon Coffee In House Brew" },
