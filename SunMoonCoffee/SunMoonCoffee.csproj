@@ -63,10 +63,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="240_F_176745165_nGctXR5YhDW6sil4ikzkxwYFoLtvbgvF.jpg" />
     <Content Include="App_Data\ProductCatalog.mdf" />
     <Content Include="App_Data\ProductCatalog_log.ldf">
       <DependentUpon>ProductCatalog.mdf</DependentUpon>
     </Content>
+    <Content Include="depositphotos_3384214-stock-photo-moon-and-stars-from-coffee.jpg" />
     <Content Include="Inventory.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

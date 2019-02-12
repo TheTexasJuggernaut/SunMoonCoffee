@@ -13,12 +13,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div style="border: thin double #000000; background-position: center; background-image: url('depositphotos_3384214-stock-photo-moon-and-stars-from-coffee.jpg'); background-repeat: no-repeat; background-attachment: scroll">
     
-        <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center" Text="Sun &amp; Moon Coffee Shop Menu"></asp:Label>
+        <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1253px"></asp:Label>
         <br />
         <br />
-        <strong><span class="auto-style1">Coffee Items</span><br class="auto-style1" />
+        <strong><span class="auto-style1" style="background-color: #996600">Coffee Items</span><br class="auto-style1" />
         </strong>
         <br />
         <br />
@@ -37,7 +37,7 @@
         <asp:Label ID="coffeeDescription" runat="server"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large" Text="Food Items"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large" Text="Food Items" BackColor="#996600"></asp:Label>
         <br />
         <br />
         <br />
