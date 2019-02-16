@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+//Testing Update from Jan - Hello!
 namespace SunMoonCoffee.Models
 {
     public class Product
