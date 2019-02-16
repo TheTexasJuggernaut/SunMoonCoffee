@@ -83,6 +83,8 @@
     <Content Include="SunMoonCoffeeMenu.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderItem.cs" />
+    <Compile Include="CurrentOrder.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
