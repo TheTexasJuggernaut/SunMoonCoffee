@@ -51,7 +51,7 @@
         <br />
     
     </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [Id], [Product], [Description], [Calories], [Ratings], [Price] FROM [Products]"></asp:SqlDataSource>
     </form>
 </body>
 </html>
