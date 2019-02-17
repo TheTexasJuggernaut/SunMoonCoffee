@@ -69,6 +69,8 @@
       <DependentUpon>ProductCatalog.mdf</DependentUpon>
     </Content>
     <Content Include="depositphotos_3384214-stock-photo-moon-and-stars-from-coffee.jpg" />
+    <Content Include="Food Icon.png" />
+    <Content Include="Food_Beverages_Hot_drink_mug-512.png" />
     <Content Include="Inventory.xml" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
