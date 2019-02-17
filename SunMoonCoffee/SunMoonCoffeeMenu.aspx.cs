@@ -11,6 +11,8 @@ namespace SunMoonCoffee
     {
 
         DataModel dataModel = new DataModel();
+        CurrentOrder currentOrder = new CurrentOrder();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -47,6 +49,23 @@ namespace SunMoonCoffee
         {
 
             foodDescription.Text = dataModel.foodItems[FoodTypeDropDownList.SelectedItem.Text];
+        }
+
+        protected void addCoffeeToOrderBtn_onClick(Object sender,
+                           EventArgs e)
+        {
+            OrderItem coffeeItem = new OrderItem(CoffeeTypeDropDownList.SelectedItem.Text);
+            currentOrder.addItem(coffeeItem);
+            orderSummary.Text = orderSummary.Text + CoffeeTypeDropDownList.SelectedItem.Text + "\n";
+
+        }
+
+        protected void addFoodToOrderBtn_onClick(Object sender,
+                           EventArgs e)
+        {
+            OrderItem foodItem = new OrderItem(FoodTypeDropDownList.SelectedItem.Text);
+            currentOrder.addItem(foodItem);
+            orderSummary.Text = orderSummary.Text + FoodTypeDropDownList.SelectedItem.Text + "\n";
         }
     }
 }
