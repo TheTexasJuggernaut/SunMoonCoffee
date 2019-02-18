@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             SUN MOON ORDER PAGE</div>
-            <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1">
+            <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
                 <ItemTemplate>
                     Id:
                     <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
@@ -33,7 +33,11 @@
 <br />
                 </ItemTemplate>
         </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [Id], [Product], [Description], [Calories], [Ratings], [Price] FROM [Products]"></asp:SqlDataSource>
+          <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Checkout" />
+          <br />
+          <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="GoBack" />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [Description], [Product], [Calories], [Ratings], [Price], [Id] FROM [Table]"></asp:SqlDataSource>
     </form>
 </body>
 </html>
