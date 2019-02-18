@@ -13,23 +13,29 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="border: thin double #000000; background-position: center top; background-image: url('depositphotos_3384214-stock-photo-moon-and-stars-from-coffee.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div style="border: thin double #000000; background-position: right top; background-image: url('sun-moon-tonic.jpg'); background-repeat: repeat-y; background-attachment: fixed; background-color: #336699;">
     
-        <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1727px"></asp:Label>
         <br />
-        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/Food_Beverages_Hot_drink_mug-512.png" Width="182px" />
+    
+        <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center; margin-left: 13px;" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1278px"></asp:Label>
         <br />
-        <strong><span class="auto-style1" style="border: thin none #000000; background-color: #996600">&nbsp;&nbsp;&nbsp; Coffee Items </span><br class="auto-style1" />
+        <br />
+        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/Food_Beverages_Hot_drink_mug-512.png" Width="189px" />
+        <br />
+        <strong><span class="auto-style1" style="border: thin none #000000; background-color: #996600; background-image: url('sun-moon-tonic.jpg'); background-repeat: repeat-y; background-attachment: fixed;">
+        <br />
+        </span><br class="auto-style1" />
         </strong>
+        <asp:Label ID="Label3" runat="server" BorderColor="Black" BorderStyle="None" Font-Bold="True" Text="  COFFEE ITEMS"></asp:Label>
         <br />
         <br />
-        <asp:DropDownList ID="CoffeeSizeDropDownList" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="CoffeeSizeDropDownList" runat="server" AutoPostBack="True" BackColor="#996600">
             <asp:ListItem Value="Small"></asp:ListItem>
             <asp:ListItem Value="Medium"></asp:ListItem>
             <asp:ListItem Value="Large"></asp:ListItem>
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged">
+        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged" BackColor="#996600">
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="addCoffeeToOrderBtn" runat="server" Text="Add to Order" onclick="addCoffeeToOrderBtn_onClick" />
@@ -37,17 +43,16 @@
         <br />
         <asp:Label ID="coffeeDescription" runat="server"></asp:Label>
         <br />
+        <asp:Image ID="Image2" runat="server" Height="128px" ImageUrl="~/food-outline-filled.png" Width="190px" />
         <br />
         <br />
-        <asp:Image ID="Image2" runat="server" Height="158px" ImageUrl="~/Food Icon.png" Width="168px" />
-        <br />
-        <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large; margin-left: 0px;" Text="  Food Items  " BackColor="#996600" BorderColor="Black" BorderStyle="None" Width="165px"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large; margin-left: 0px; margin-bottom: 1px;" Text="Food Items" BorderColor="Black" BorderStyle="None" Width="196px"></asp:Label>
         <br />
         <br />
         <br />
-        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged">
+        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged" BackColor="#996600">
         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="addFoodToOrderBtn" runat="server" Text="Add to Order" onclick="addFoodToOrderBtn_onClick"/>
         <br />
         <br />
@@ -55,15 +60,17 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
         <br />
     
         <asp:Label ID="orderSummary" runat="server"></asp:Label>
     
         <br />
         <br />
+        <asp:GridView ID="orderList" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="398px">
+        </asp:GridView>
         <br />
         <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
         <br />
         <br />
         <br />
