@@ -67,6 +67,11 @@ namespace SunMoonCoffee
             currentOrder.addItem(foodItem);
             orderSummary.Text = orderSummary.Text + FoodTypeDropDownList.SelectedItem.Text + "\n";
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("OrderPage.aspx");
+        }
     }
 }
 
