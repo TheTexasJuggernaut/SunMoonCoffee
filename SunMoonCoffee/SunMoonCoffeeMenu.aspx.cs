@@ -25,18 +25,18 @@ namespace SunMoonCoffee
 
         protected void populateCoffeeTypeDropDownList()
         {
-            //CoffeeTypeDropDownList.DataSource = dataModel.coffeeItems;
-            //CoffeeTypeDropDownList.DataTextField = "Key";
-            //CoffeeTypeDropDownList.DataValueField = "Key";
-            //CoffeeTypeDropDownList.DataBind();
+            CoffeeTypeDropDownList.DataSource = dataModel.coffeeItems;
+            CoffeeTypeDropDownList.DataTextField = "Key";
+            CoffeeTypeDropDownList.DataValueField = "Key";
+            CoffeeTypeDropDownList.DataBind();
         }
 
         protected void populateFoodTypeDropDownList()
         {
-            //FoodTypeDropDownList.DataSource = dataModel.foodItems;
-            //FoodTypeDropDownList.DataTextField = "Key";
-            //FoodTypeDropDownList.DataValueField = "Key";
-            //FoodTypeDropDownList.DataBind();
+            FoodTypeDropDownList.DataSource = dataModel.foodItems;
+            FoodTypeDropDownList.DataTextField = "Key";
+            FoodTypeDropDownList.DataValueField = "Key";
+            FoodTypeDropDownList.DataBind();
         }
 
         protected void coffeeType_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -54,21 +54,8 @@ namespace SunMoonCoffee
         protected void addCoffeeToOrderBtn_onClick(Object sender,
                            EventArgs e)
         {
-            
-            using (var context = new ProductCatalogEntities_Orders())
-            {
-                OrderItem coffeeItem = new OrderItem()
-                {
-                    OrderID = 1,
-                    ProductID = 1, //get product ID from db
-                    Price = 1 // get price from DB
-                };
-
-                context.OrderItems.Add(coffeeItem);
-
-                context.SaveChanges();
-            }
-
+            OrderItem coffeeItem = new OrderItem(CoffeeTypeDropDownList.SelectedItem.Text);
+            currentOrder.addItem(coffeeItem);
             orderSummary.Text = orderSummary.Text + CoffeeTypeDropDownList.SelectedItem.Text + "\n";
 
         }
@@ -76,9 +63,9 @@ namespace SunMoonCoffee
         protected void addFoodToOrderBtn_onClick(Object sender,
                            EventArgs e)
         {
-            //OrderItem foodItem = new OrderItem(FoodTypeDropDownList.SelectedItem.Text);
-            //currentOrder.addItem(foodItem);
-            //orderSummary.Text = orderSummary.Text + FoodTypeDropDownList.SelectedItem.Text + "\n";
+            OrderItem foodItem = new OrderItem(FoodTypeDropDownList.SelectedItem.Text);
+            currentOrder.addItem(foodItem);
+            orderSummary.Text = orderSummary.Text + FoodTypeDropDownList.SelectedItem.Text + "\n";
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -8,9 +8,6 @@ namespace SunMoonCoffee
     public class CurrentOrder
     {
         System.Collections.ArrayList orderItems = new System.Collections.ArrayList();
-        int orderID;
-        string customerName;
-        string status;
 
         public CurrentOrder()
         {

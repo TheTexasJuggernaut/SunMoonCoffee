@@ -44,17 +44,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -85,24 +75,7 @@
     <Content Include="Food_Beverages_Hot_drink_mug-512.png" />
     <Content Include="images.png" />
     <Content Include="Inventory.xml" />
-    <Content Include="OrdersDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrdersDataModel.edmx</DependentUpon>
-      <LastGenOutput>OrdersDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="OrdersDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrdersDataModel.edmx</DependentUpon>
-      <LastGenOutput>OrdersDataModel.cs</LastGenOutput>
-    </Content>
     <Content Include="packages.config" />
-    <EntityDeploy Include="OrdersDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OrdersDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="OrdersDataModel.edmx.diagram">
-      <DependentUpon>OrdersDataModel.edmx</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -116,12 +89,7 @@
     <Content Include="SunMoonCoffeeMenu.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Order.cs">
-      <DependentUpon>OrdersDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrderItem.cs">
-      <DependentUpon>OrdersDataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="OrderItem.cs" />
     <Compile Include="CurrentOrder.cs" />
     <Compile Include="DataModel.cs" />
     <Compile Include="Models\Category.cs" />
@@ -135,9 +103,6 @@
     <Compile Include="SunMoonCoffeeMenu.aspx.designer.cs">
       <DependentUpon>SunMoonCoffeeMenu.aspx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

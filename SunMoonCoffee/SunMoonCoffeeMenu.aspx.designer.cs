@@ -67,15 +67,6 @@ namespace SunMoonCoffee {
         protected global::System.Web.UI.WebControls.DropDownList CoffeeTypeDropDownList;
         
         /// <summary>
-        /// SqlDataSource2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
         /// addCoffeeToOrderBtn control.
         /// </summary>
         /// <remarks>
@@ -119,15 +110,6 @@ namespace SunMoonCoffee {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList FoodTypeDropDownList;
-        
-        /// <summary>
-        /// FoodDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource FoodDataSource;
         
         /// <summary>
         /// addFoodToOrderBtn control.
