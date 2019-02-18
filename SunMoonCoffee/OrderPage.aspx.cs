@@ -13,5 +13,21 @@ namespace SunMoonCoffee
         {
 
         }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("SunMoonCoffeeMenu.aspx");
+            Server.Transfer("SunMoonCoffeeMenu.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
