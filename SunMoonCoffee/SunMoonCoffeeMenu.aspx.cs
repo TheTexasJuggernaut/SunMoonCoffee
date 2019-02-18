@@ -12,31 +12,23 @@ namespace SunMoonCoffee
 
         DataModel dataModel = new DataModel();
         CurrentOrder currentOrder = new CurrentOrder();
+        DataAccessLayer db = new DataAccessLayer();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
-                //initialize coffee and drop down menus
-                populateCoffeeTypeDropDownList();
-                populateFoodTypeDropDownList();
+
+                //persist new Order for this session
+                createNewOrder();
             }
         }
 
-        protected void populateCoffeeTypeDropDownList()
+        protected void createNewOrder()
         {
-            CoffeeTypeDropDownList.DataSource = dataModel.coffeeItems;
-            CoffeeTypeDropDownList.DataTextField = "Key";
-            CoffeeTypeDropDownList.DataValueField = "Key";
-            CoffeeTypeDropDownList.DataBind();
-        }
-
-        protected void populateFoodTypeDropDownList()
-        {
-            FoodTypeDropDownList.DataSource = dataModel.foodItems;
-            FoodTypeDropDownList.DataTextField = "Key";
-            FoodTypeDropDownList.DataValueField = "Key";
-            FoodTypeDropDownList.DataBind();
+            Order newOrder = new Order();
+            int id = db.addOrder(newOrder);
+            Session["newOrderId"] = id;
         }
 
         protected void coffeeType_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -54,8 +46,8 @@ namespace SunMoonCoffee
         protected void addCoffeeToOrderBtn_onClick(Object sender,
                            EventArgs e)
         {
-            OrderItem coffeeItem = new OrderItem(CoffeeTypeDropDownList.SelectedItem.Text);
-            currentOrder.addItem(coffeeItem);
+            addProductToOrder(CoffeeTypeDropDownList.SelectedItem.Value);
+
             orderSummary.Text = orderSummary.Text + CoffeeTypeDropDownList.SelectedItem.Text + "\n";
 
         }
@@ -63,8 +55,8 @@ namespace SunMoonCoffee
         protected void addFoodToOrderBtn_onClick(Object sender,
                            EventArgs e)
         {
-            OrderItem foodItem = new OrderItem(FoodTypeDropDownList.SelectedItem.Text);
-            currentOrder.addItem(foodItem);
+            addProductToOrder(FoodTypeDropDownList.SelectedItem.Value);
+
             orderSummary.Text = orderSummary.Text + FoodTypeDropDownList.SelectedItem.Text + "\n";
         }
 
@@ -76,6 +68,22 @@ namespace SunMoonCoffee
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addProductToOrder(String selectedProductID)
+        {
+            OrderItem orderItem = new OrderItem()
+            {
+                OrderID = Convert.ToInt32(Session["newOrderId"].ToString()),
+                ProductID = Convert.ToInt32(selectedProductID),
+                Price = db.getProduct(Convert.ToInt32(selectedProductID)).Price,
+                ProductName = db.getProduct(Convert.ToInt32(selectedProductID)).ProductName
+            };
+
+            db.addOrderItem(orderItem);
+
+            //update orderList
+            orderList.DataBind();
         }
     }
 }

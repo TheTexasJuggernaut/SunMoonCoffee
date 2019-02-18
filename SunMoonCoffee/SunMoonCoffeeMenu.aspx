@@ -35,8 +35,13 @@
             <asp:ListItem Value="Large"></asp:ListItem>
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged">
+        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged" DataSourceID="CoffeeItemsDataSource" DataTextField="ProductName" DataValueField="Id">
         </asp:DropDownList>
+        <asp:SqlDataSource ID="CoffeeItemsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [ProductName], [Id] FROM [Products] WHERE ([Type] LIKE '%' + @Type + '%')">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="C" Name="Type" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="addCoffeeToOrderBtn" runat="server" Text="Add to Order" onclick="addCoffeeToOrderBtn_onClick" />
         <br />
@@ -50,8 +55,13 @@
         <br />
         <br />
         <br />
-        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged">
+        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged" DataSourceID="FoodItemsDataSource" DataTextField="ProductName" DataValueField="Id">
         </asp:DropDownList>
+        <asp:SqlDataSource ID="FoodItemsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [ProductName], [Id] FROM [Products] WHERE ([Type] LIKE '%' + @Type + '%')">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="F" Name="Type" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="addFoodToOrderBtn" runat="server" Text="Add to Order" onclick="addFoodToOrderBtn_onClick"/>
         <br />
@@ -66,8 +76,17 @@
     
         <br />
         <br />
-        <asp:GridView ID="orderList" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="398px">
+        <asp:GridView ID="orderList" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="398px" AutoGenerateColumns="False" DataSourceID="OrderSummaryDataSource">
+            <Columns>
+                <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+            </Columns>
         </asp:GridView>
+        <asp:SqlDataSource ID="OrderSummaryDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [ProductName], [Price] FROM [OrderItems] WHERE ([OrderID] = @OrderID)">
+            <SelectParameters>
+                <asp:SessionParameter Name="OrderID" SessionField="newOrderId" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <br />
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />

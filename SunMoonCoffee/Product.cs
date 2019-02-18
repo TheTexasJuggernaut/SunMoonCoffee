@@ -12,15 +12,23 @@ namespace SunMoonCoffee
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderItem
+    public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.OrderItems = new HashSet<OrderItem>();
+        }
+    
         public int Id { get; set; }
-        public Nullable<int> OrderID { get; set; }
-        public Nullable<int> ProductID { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> Calories { get; set; }
+        public Nullable<int> Ratings { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public string Type { get; set; }
         public string ProductName { get; set; }
     
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }
