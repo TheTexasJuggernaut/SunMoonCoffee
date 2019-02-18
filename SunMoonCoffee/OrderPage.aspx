@@ -33,10 +33,22 @@
 <br />
                 </ItemTemplate>
         </asp:DataList>
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                <asp:BoundField DataField="Product" HeaderText="Product" SortExpression="Product" />
+                <asp:BoundField DataField="Calories" HeaderText="Calories" SortExpression="Calories" />
+                <asp:BoundField DataField="Ratings" HeaderText="Ratings" SortExpression="Ratings" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+            </Columns>
+        </asp:GridView>
+        <br />
           <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Checkout" />
-          <br />
-          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="GoBack" />
+        <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [Description], [Product], [Calories], [Ratings], [Price], [Id] FROM [Table]"></asp:SqlDataSource>
     </form>
 </body>
