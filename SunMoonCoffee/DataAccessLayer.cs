@@ -37,5 +37,19 @@ namespace SunMoonCoffee
                 return product;
             }
         }
+
+        public void updateOrder(Order order)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                Order orderRecord = (from p in context.Orders
+                                   where p.OrderID == order.OrderID
+                                   select p).FirstOrDefault<Order>();
+                orderRecord.CustomerName = order.CustomerName;
+                orderRecord.OrderTotal = order.OrderTotal;
+                orderRecord.Status = "Submitted";
+                context.SaveChanges();
+            }
+        }
     }
 }

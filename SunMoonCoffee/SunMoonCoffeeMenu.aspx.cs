@@ -62,7 +62,8 @@ namespace SunMoonCoffee
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Server.Transfer("OrderPage.aspx");
+            //Server.Transfer("OrderPage.aspx");
+            Response.Redirect("OrderPage.aspx");
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

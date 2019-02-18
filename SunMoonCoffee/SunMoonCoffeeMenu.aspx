@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="border: thin double #000000; background-position: right top; background-image: url('sun-moon-tonic.jpg'); background-repeat: repeat-y; background-attachment: fixed; background-color: #336699;">
+    <div style="background: #336699 url('sun-moon-tonic.jpg') repeat-y fixed right top; border: thin double #000000; margin-left: 0px;">
     
         <br />
     

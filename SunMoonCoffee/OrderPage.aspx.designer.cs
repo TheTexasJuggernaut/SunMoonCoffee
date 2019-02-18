@@ -22,31 +22,49 @@ namespace SunMoonCoffee {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// DataList1 control.
+        /// orderSummaryView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.WebControls.GridView orderSummaryView;
         
         /// <summary>
-        /// GridView1 control.
+        /// TotalLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label TotalLabel;
         
         /// <summary>
-        /// Button2 control.
+        /// nameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label nameLabel;
+        
+        /// <summary>
+        /// nameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameTextBox;
+        
+        /// <summary>
+        /// ConfirmOrderBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ConfirmOrderBtn;
         
         /// <summary>
         /// Button1 control.
@@ -58,12 +76,12 @@ namespace SunMoonCoffee {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// OrderSummaryDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource OrderSummaryDetails;
     }
 }
