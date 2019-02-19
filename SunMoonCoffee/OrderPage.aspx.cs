@@ -13,18 +13,21 @@ namespace SunMoonCoffee
         DataAccessLayer db = new DataAccessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //int sum;
-            for (int i = 0; i < orderSummaryView.Rows.Count; i++)
+            if (!this.IsPostBack)
             {
-                sum += Convert.ToDecimal(orderSummaryView.Rows[i].Cells[1].Text);
+                //int sum;
+                for (int i = 0; i < orderSummaryView.Rows.Count; i++)
+                {
+                    sum += Convert.ToDecimal(orderSummaryView.Rows[i].Cells[1].Text);
 
+                }
+
+                TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
+                Session["orderTotal"] = sum;
             }
-
-            TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
-            Session["orderTotal"] = sum;
-
-
         }
+
+
 
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -56,6 +59,7 @@ namespace SunMoonCoffee
             newOrder.Status = "Submitted";
 
             db.updateOrder(newOrder);
+            ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Your order was submitted!" + "');", true);
         }
     }
 }
