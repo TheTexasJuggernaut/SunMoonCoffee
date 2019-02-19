@@ -7,9 +7,14 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            SUN MOON ORDER PAGE</div>
+    <form id="form1" runat="server" style="background: #336699 url('sun-moon-tonic.jpg') repeat-y fixed right center; height: 1051px; width: 1305px;">
+        <div style="background-color: #CC9900; border-style: solid; border-color: #000000">
+            <p id="OrderPage" style="margin: auto; background-color: #996600; width: 1296px; height: 40px; font-size: 35px; font-weight: normal; font-style: normal;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUN MOON ORDER PAGE</p>
+        </div>
+        <br />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/icon--purchase-order.png" style="margin-left: 104px" Width="255px" />
+        <br />
         <asp:GridView ID="orderSummaryView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="OrderSummaryDetails">
             <Columns>
                 <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
@@ -22,7 +27,7 @@
         <br />
         <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="nameTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="nameTextBox" runat="server" BackColor="#009933"></asp:TextBox>
         <br />
         <br />
           &nbsp;&nbsp;<asp:Button ID="ConfirmOrderBtn" runat="server" OnClick="ConfirmOrderBtn_Click" Text="Confirm Order" />
