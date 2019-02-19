@@ -20,7 +20,7 @@
         <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center; margin-left: 13px;" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1278px"></asp:Label>
         <br />
         <br />
-        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/Food_Beverages_Hot_drink_mug-512.png" Width="189px" />
+        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/Food_Beverages_Hot_drink_mug-512.png" Width="189px" style="margin-left: 48px" />
         <br />
         <strong><span class="auto-style1" style="border: thin none #000000; background-color: #996600; background-image: url('sun-moon-tonic.jpg'); background-repeat: repeat-y; background-attachment: fixed;">
         <br />
@@ -35,7 +35,7 @@
             <asp:ListItem Value="Large"></asp:ListItem>
         </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged" DataSourceID="CoffeeItemsDataSource" DataTextField="ProductName" DataValueField="Id">
+        <asp:DropDownList ID="CoffeeTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "coffeeType_OnSelectedIndexChanged" DataSourceID="CoffeeItemsDataSource" DataTextField="ProductName" DataValueField="Id" BackColor="#996600">
         </asp:DropDownList>
         <asp:SqlDataSource ID="CoffeeItemsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [ProductName], [Id] FROM [Products] WHERE ([Type] LIKE '%' + @Type + '%')">
             <SelectParameters>
@@ -48,14 +48,14 @@
         <br />
         <asp:Label ID="coffeeDescription" runat="server"></asp:Label>
         <br />
-        <asp:Image ID="Image2" runat="server" Height="128px" ImageUrl="~/food-outline-filled.png" Width="190px" />
+        <asp:Image ID="Image2" runat="server" Height="128px" ImageUrl="~/food-outline-filled.png" Width="190px" style="margin-left: 47px" />
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large; margin-left: 0px; margin-bottom: 1px;" Text="Food Items" BorderColor="Black" BorderStyle="None" Width="196px"></asp:Label>
         <br />
         <br />
         <br />
-        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged" DataSourceID="FoodItemsDataSource" DataTextField="ProductName" DataValueField="Id">
+        <asp:DropDownList ID="FoodTypeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged = "foodType_OnSelectedIndexChanged" DataSourceID="FoodItemsDataSource" DataTextField="ProductName" DataValueField="Id" BackColor="#996600">
         </asp:DropDownList>
         <asp:SqlDataSource ID="FoodItemsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductCatalogConnectionString %>" SelectCommand="SELECT [ProductName], [Id] FROM [Products] WHERE ([Type] LIKE '%' + @Type + '%')">
             <SelectParameters>
@@ -69,6 +69,9 @@
         <asp:Label ID="foodDescription" runat="server"></asp:Label>
         <br />
         <br />
+        <br />
+        <br />
+        <asp:Image ID="Image3" runat="server" ImageUrl="~/cart-icon-png-transparent-7.png" style="margin-left: 60px; margin-top: 0px" Width="173px" />
         <br />
         <br />
     

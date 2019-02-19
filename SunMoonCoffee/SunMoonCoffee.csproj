@@ -74,15 +74,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="240_F_176745165_nGctXR5YhDW6sil4ikzkxwYFoLtvbgvF.jpg" />
+    <Content Include="261-2611207_cart-add-to-cart-icon-png.png.jpg" />
     <Content Include="App_Data\ProductCatalog.mdf" />
     <Content Include="App_Data\ProductCatalog_log.ldf">
       <DependentUpon>ProductCatalog.mdf</DependentUpon>
     </Content>
+    <Content Include="cart-icon-png-transparent-7.png" />
     <Content Include="depositphotos_3384214-stock-photo-moon-and-stars-from-coffee.jpg" />
     <Content Include="Food Icon.png" />
     <Content Include="food-flat.png" />
     <Content Include="food-outline-filled.png" />
     <Content Include="Food_Beverages_Hot_drink_mug-512.png" />
+    <Content Include="icon--purchase-order.png" />
     <Content Include="images.png" />
     <Content Include="Inventory.xml" />
     <Content Include="OrderPage.aspx" />
