@@ -49,6 +49,15 @@ namespace SunMoonCoffee {
         protected global::System.Web.UI.WebControls.Label TotalLabel;
         
         /// <summary>
+        /// OrderIdLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label OrderIdLabel;
+        
+        /// <summary>
         /// nameLabel control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace SunMoonCoffee {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nameTextBox;
+        
+        /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// ConfirmOrderBtn control.

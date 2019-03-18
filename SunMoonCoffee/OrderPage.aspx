@@ -13,7 +13,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUN MOON ORDER PAGE</p>
         </div>
         <br />
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/Pic Repo/icon--purchase-order.png" style="margin-left: 19px" Width="246px" Height="239px" />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Pic Repo/icon--purchase-order.png" style="margin-left: 63px" Width="255px" />
         <br />
         <asp:GridView ID="orderSummaryView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="OrderSummaryDetails">
             <Columns>
@@ -25,9 +25,14 @@
         <asp:Label ID="TotalLabel" runat="server" Text="Total: "></asp:Label>
         <br />
         <br />
+        <asp:Label ID="OrderIdLabel" runat="server" Text="Order Id: "></asp:Label>
+        <br />
+        <br />
         <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="nameTextBox" runat="server" BackColor="#996600"></asp:TextBox>
+        <asp:TextBox ID="nameTextBox" runat="server" BackColor="#009933"></asp:TextBox>
+        &nbsp; Email&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <br />
           &nbsp;&nbsp;<asp:Button ID="ConfirmOrderBtn" runat="server" OnClick="ConfirmOrderBtn_Click" Text="Confirm Order" />

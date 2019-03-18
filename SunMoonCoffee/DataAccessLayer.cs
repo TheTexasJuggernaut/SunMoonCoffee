@@ -16,7 +16,19 @@ namespace SunMoonCoffee
             }
         }
 
-        public int addOrder(Employee order)
+        public void removeOrderItem(int orderItemId)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                OrderItem item = (from o in context.OrderItems
+                                  where o.Id == orderItemId
+                                  select o).FirstOrDefault<OrderItem>();
+                context.OrderItems.Remove(item);
+                context.SaveChanges();
+            }
+        }
+
+        public int addOrder(Order order)
         {
             using (var context = new ProductCatalogEntities_Orders())
             {
@@ -38,17 +50,28 @@ namespace SunMoonCoffee
             }
         }
 
-        public void updateOrder(Employee order)
+        public void updateOrder(Order order)
         {
             using (var context = new ProductCatalogEntities_Orders())
             {
-                Employee orderRecord = (from p in context.Orders
+                Order orderRecord = (from p in context.Orders
                                    where p.OrderID == order.OrderID
-                                   select p).FirstOrDefault<Employee>();
+                                   select p).FirstOrDefault<Order>();
                 orderRecord.CustomerName = order.CustomerName;
                 orderRecord.OrderTotal = order.OrderTotal;
                 orderRecord.Status = "Submitted";
                 context.SaveChanges();
+            }
+        }
+
+        public Order getOrder(int orderId)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                Order orderRecord = (from p in context.Orders
+                                     where p.OrderID == orderId
+                                     select p).FirstOrDefault<Order>();
+                return orderRecord;
             }
         }
     }
