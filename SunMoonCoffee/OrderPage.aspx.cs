@@ -11,6 +11,7 @@ namespace SunMoonCoffee
     public partial class OrderPage : System.Web.UI.Page
     {
         decimal sum;
+        string password = "SoftwareLife325!";
         DataAccessLayer db = new DataAccessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,16 +77,16 @@ namespace SunMoonCoffee
             nameTextBox.Text = "";
             OrderIdLabel.Text = "Order ID: ";
             Session.Clear();
-            to.text = TextBox1.text;
-            from.text = "Alexandershawn1@gmail.com";
-            subject.text = " Test";
-            body.text = " Items ";
+           string  totext = TextBox1.Text;
+            string fromtext = "Alexandershawn1@gmail.com";
+            string subjecttext = " Test";
+            string bodytext = " Items ";
 
-            MailMessage message = new MailMessage(to.text, from.text, subject.text, body.text);
+            MailMessage message = new MailMessage(totext, fromtext, subjecttext, bodytext);
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
-            client.Credentials = new System.Net.NetworkCredential("alexandershawn1@gmail.com", "1234");
+            client.Credentials = new System.Net.NetworkCredential("thetexasjuggernaut@gmail.com", password);
             client.Send(message);
 
         }
