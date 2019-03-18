@@ -83,14 +83,14 @@ namespace SunMoonCoffee
 
         }
 
-        protected void updateOrder(Employee order)
+        protected void updateOrder(Order order)
         {
         }
 
         protected void ConfirmOrderBtn_Click(object sender, EventArgs e)
         {
             //TODO: updateOrder
-            Employee newOrder = new Employee();
+            Order newOrder = new Order();
             newOrder.OrderID = Convert.ToInt32(Session["newOrderId"].ToString());
             newOrder.CustomerName = nameTextBox.Text;
             newOrder.OrderTotal = Convert.ToDecimal(Session["orderTotal"].ToString());

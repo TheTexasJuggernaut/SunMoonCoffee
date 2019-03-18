@@ -23,36 +23,36 @@ namespace SunMoonCoffee
             string field = Login1.UserName.ToString();
             string pass = Login1.Password.ToString();
 
-            try
-            {
-                using ( Employee context = new Employee())
-                {
-                    var user = context.EmployeeLogin.FirstOrDefault(u => u.Name == field);
+            //try
+            //{
+            //    using (Order context = new Order())
+            //    {
+            //        var user = context.EmployeeLogin.FirstOrDefault(u => u.Name == field);
 
 
-                    if (user != null)
-                    {
-                        if (user.Password == pass)
-                        {
-                            Session["Username"] = user.Name;
-                            Login1.FailureText = "Pass";
-                            Response.Redirect("OrderPage.aspx");
-                        }
-                        else
-                        {
-                            Login1.FailureText = "Wrong Password";
-                        }
-                    }
-                    else
-                    {
-                        Login1.FailureText = "Wrong Username";
-                    }
-                }
-            }
-            catch
-            {
-                Login1.FailureText = "Error";
-            }
+            //        if (user != null)
+            //        {
+            //            if (user.Password == pass)
+            //            {
+            //                Session["Username"] = user.Name;
+            //                Login1.FailureText = "Pass";
+            //                Response.Redirect("OrderPage.aspx");
+            //            }
+            //            else
+            //            {
+            //                Login1.FailureText = "Wrong Password";
+            //            }
+            //        }
+            //        else
+            //        {
+            //            Login1.FailureText = "Wrong Username";
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    Login1.FailureText = "Error";
+            //}
 
         }
 

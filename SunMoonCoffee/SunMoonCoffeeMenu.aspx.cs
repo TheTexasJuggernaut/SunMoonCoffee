@@ -35,7 +35,7 @@ namespace SunMoonCoffee
 
         protected void createNewOrder()
         {
-            Employee newOrder = new Employee();
+            Order newOrder = new Order();
             int id = db.addOrder(newOrder);
             Session["newOrderId"] = id;
         }

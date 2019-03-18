@@ -12,10 +12,10 @@ namespace SunMoonCoffee
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public Order()
         {
             this.OrderItems = new HashSet<OrderItem>();
         }
@@ -27,6 +27,5 @@ namespace SunMoonCoffee
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItems { get; set; }
-        public string Name { get; internal set; }
     }
 }
