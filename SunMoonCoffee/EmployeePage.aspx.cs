@@ -36,7 +36,7 @@ namespace SunMoonCoffee
                         {
                             ///"Employee" = user.Name;
                             Login1.FailureText = "Pass";
-                            Response.Redirect("OrderPage.aspx");
+                            Response.Redirect("EmployeeOrder.aspx");
                         }
                         else
                         {
