@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="background: #336699 url('App_Data/Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right top; border: thin double #000000; margin-left: 0px;">
+    <div style="background: #336699 url('Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right top; border: thin double #000000; margin-left: 0px;">
     
         <asp:LinkButton ID="EmployeeLoginBtn" runat="server" OnClick="EmployeeLoginBtn_Click">Employee Login</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -25,7 +25,7 @@
         <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center; margin-left: 13px;" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1278px"></asp:Label>
         <br />
         <br />
-        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/App_Data/Pic Repo/Food_Beverages_Hot_drink_mug-512.png" Width="189px" style="margin-left: 48px" />
+        <asp:Image ID="Image1" runat="server" Height="165px" ImageUrl="~/Pic Repo/Food_Beverages_Hot_drink_mug-512.png" Width="189px" style="margin-left: 48px" />
         <br />
         <strong><span class="auto-style1" style="border: thin none #000000; background-color: #996600; background-image: url('sun-moon-tonic.jpg'); background-repeat: repeat-y; background-attachment: fixed;">
         <br />
@@ -53,7 +53,7 @@
         <br />
         <asp:Label ID="coffeeDescription" runat="server"></asp:Label>
         <br />
-        <asp:Image ID="Image2" runat="server" Height="128px" ImageUrl="~/App_Data/Pic Repo/food-outline-filled.png" Width="190px" style="margin-left: 47px" />
+        <asp:Image ID="Image2" runat="server" Height="128px" ImageUrl="~/Pic Repo/food-outline-filled.png" Width="190px" style="margin-left: 47px" />
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: large; margin-left: 0px; margin-bottom: 1px;" Text="Food Items" BorderColor="Black" BorderStyle="None" Width="196px"></asp:Label>
@@ -76,7 +76,7 @@
         <br />
         <br />
         <br />
-        <asp:Image ID="Image3" runat="server" ImageUrl="~/App_Data/Pic Repo/cart-icon-png-transparent-7.png" style="margin-left: 60px; margin-top: 0px" Width="173px" />
+        <asp:Image ID="Image3" runat="server" ImageUrl="~/Pic Repo/cart-icon-png-transparent-7.png" style="margin-left: 60px; margin-top: 0px" Width="173px" />
         <br />
         <br />
     

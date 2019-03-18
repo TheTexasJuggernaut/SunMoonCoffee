@@ -7,13 +7,13 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" style="background: #336699 url('App_Data/Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right center; height: 1051px; width: 1305px;">
+    <form id="form1" runat="server" style="background: #336699 url('Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right center; height: 1051px; width: 1305px;">
         <div style="background-color: #CC9900; border-style: solid; border-color: #000000">
             <p id="OrderPage" style="margin: auto; background-color: #996600; width: 1296px; height: 40px; font-size: 35px; font-weight: normal; font-style: normal;">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUN MOON ORDER PAGE</p>
         </div>
         <br />
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Data/Pic Repo/icon--purchase-order.png" style="margin-left: 63px" Width="255px" />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Pic Repo/icon--purchase-order.png" style="margin-left: 63px" Width="255px" />
         <br />
         <asp:GridView ID="orderSummaryView" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="OrderSummaryDetails">
             <Columns>

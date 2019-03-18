@@ -77,10 +77,10 @@
     <Content Include="App_Data\ProductCatalog_log.ldf">
       <DependentUpon>ProductCatalog.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\Pic Repo\cart-icon-png-transparent-7.png" />
-    <Content Include="App_Data\Pic Repo\food-outline-filled.png" />
-    <Content Include="App_Data\Pic Repo\Food_Beverages_Hot_drink_mug-512.png" />
-    <Content Include="App_Data\Pic Repo\icon--purchase-order.png" />
+    <Content Include="Pic Repo\cart-icon-png-transparent-7.png" />
+    <Content Include="Pic Repo\food-outline-filled.png" />
+    <Content Include="Pic Repo\Food_Beverages_Hot_drink_mug-512.png" />
+    <Content Include="Pic Repo\icon--purchase-order.png" />
     <Content Include="EditOrderPage.aspx" />
     <Content Include="EmployeePage.aspx" />
     <Content Include="Inventory.xml" />
@@ -111,7 +111,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Pic Repo\sun-moon-tonic.jpg" />
+    <Content Include="Pic Repo\sun-moon-tonic.jpg" />
     <Content Include="Web.config" />
     <Content Include="SunMoonCoffeeMenu.aspx" />
   </ItemGroup>
