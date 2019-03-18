@@ -15,9 +15,9 @@
     <form id="form1" runat="server">
     <div style="background: #336699 url('Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right top; border: thin double #000000; margin-left: 0px;">
     
-        <asp:LinkButton ID="EmployeeLoginBtn" runat="server" OnClick="EmployeeLoginBtn_Click">Employee Login</asp:LinkButton>
+        <asp:LinkButton ID="EmployeeLoginBtn" runat="server" OnClick="EmployeeLoginBtn_Click" ForeColor="Black">Employee Login</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:LinkButton ID="EditOrderBtn" runat="server" OnClick="EditOrderBtn_Click">Edit Order</asp:LinkButton>
+        <asp:LinkButton ID="EditOrderBtn" runat="server" OnClick="EditOrderBtn_Click" ForeColor="Black">Edit Order</asp:LinkButton>
         <br />
     
         <br />

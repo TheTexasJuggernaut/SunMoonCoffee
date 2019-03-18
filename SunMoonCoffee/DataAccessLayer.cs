@@ -16,7 +16,7 @@ namespace SunMoonCoffee
             }
         }
 
-        public int addOrder(Order order)
+        public int addOrder(Employee order)
         {
             using (var context = new ProductCatalogEntities_Orders())
             {
@@ -38,13 +38,13 @@ namespace SunMoonCoffee
             }
         }
 
-        public void updateOrder(Order order)
+        public void updateOrder(Employee order)
         {
             using (var context = new ProductCatalogEntities_Orders())
             {
-                Order orderRecord = (from p in context.Orders
+                Employee orderRecord = (from p in context.Orders
                                    where p.OrderID == order.OrderID
-                                   select p).FirstOrDefault<Order>();
+                                   select p).FirstOrDefault<Employee>();
                 orderRecord.CustomerName = order.CustomerName;
                 orderRecord.OrderTotal = order.OrderTotal;
                 orderRecord.Status = "Submitted";

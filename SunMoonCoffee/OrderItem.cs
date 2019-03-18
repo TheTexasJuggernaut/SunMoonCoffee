@@ -20,7 +20,7 @@ namespace SunMoonCoffee
         public Nullable<decimal> Price { get; set; }
         public string ProductName { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual Employee Order { get; set; }
         public virtual Product Product { get; set; }
     }
 }
