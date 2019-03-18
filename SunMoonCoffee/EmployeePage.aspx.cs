@@ -30,7 +30,7 @@ namespace SunMoonCoffee
                   //  var user = context.EmployeeLogin.FirstOrDefault(u => u.Name == field);
 
 
-                    if (field == "Emplyee")
+                    if (field == "Employee")
                   //  {
                         if ("1234" == pass)
                         {
@@ -82,7 +82,7 @@ namespace SunMoonCoffee
 
         private class Employee
         {
-            internal object EmployeeLogin;
+           // internal object EmployeeLogin;
         }
     }
 }
