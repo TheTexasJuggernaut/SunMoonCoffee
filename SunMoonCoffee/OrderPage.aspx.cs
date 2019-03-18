@@ -12,6 +12,33 @@ namespace SunMoonCoffee
     {
         decimal sum;
         string password = "SoftwareLife325!";
+        string totext;
+        string fromtext;
+        string subjecttext;
+        string bodytext;
+        delegate string MailerDelegate(string a, string b, string c, string d);
+        MailerDelegate Mailer;
+
+
+        private static string Sender(string a, string b, string c, string d, string password)
+        {
+            try
+            {
+                MailMessage message = new MailMessage(b, a, c, d);
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Credentials = new System.Net.NetworkCredential("thetexasjuggernaut@gmail.com", password);
+                client.Send(message);
+            }
+            catch
+            {
+
+            }
+            return "sent";
+        }
+        Func<string, string, string, string, string, string> SENDER = Sender;
+
         DataAccessLayer db = new DataAccessLayer();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -72,33 +99,21 @@ namespace SunMoonCoffee
             db.updateOrder(newOrder);
             ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Your order # " + Convert.ToInt32(Session["newOrderId"]).ToString() + " was submitted!" + "');", true);
             //Email Order
-             DateTime now = DateTime.Now;
-            string totext = TextBox1.Text;
-            string fromtext = "thetexasjuggernaut@gmail.com";
-            string subjecttext = "Sun Moon Coffee Oder ID #" + newOrder.OrderID;
-            string bodytext = " Thank you " + newOrder.CustomerName + " for your purchase on " + now.ToString() + "." + "Your total is : $" + newOrder.OrderTotal  + " We appreciate the buisness and hope to see you soon!";
+            DateTime now = DateTime.Now;
+            totext = TextBox1.Text;
+            fromtext = "thetexasjuggernaut@gmail.com";
+            subjecttext = "Sun Moon Coffee Oder ID #" + newOrder.OrderID;
+            bodytext = " Thank you " + newOrder.CustomerName + " for your purchase on " + now.ToString() + "." + "Your total is : $" + newOrder.OrderTotal + " We appreciate the buisness and hope to see you soon!";
 
+            SENDER(totext, fromtext, subjecttext, bodytext, password);
 
-            try
-            {
-                MailMessage message = new MailMessage(fromtext, totext, subjecttext, bodytext);
-                message.IsBodyHtml = true;
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.EnableSsl = true;
-                client.Credentials = new System.Net.NetworkCredential("thetexasjuggernaut@gmail.com", password);
-                client.Send(message);
-            }
-            catch
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Email Failed" + "');", true);
-            }
             //clear the session 
             TotalLabel.Text = "Total:";
             nameTextBox.Text = "";
             OrderIdLabel.Text = "Order ID: ";
             Session.Clear();
-           
-          
+
+
 
         }
     }
