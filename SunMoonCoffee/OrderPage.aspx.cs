@@ -71,23 +71,34 @@ namespace SunMoonCoffee
 
             db.updateOrder(newOrder);
             ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Your order # " + Convert.ToInt32(Session["newOrderId"]).ToString() + " was submitted!" + "');", true);
+            //Email Order
+             DateTime now = DateTime.Now;
+            string totext = TextBox1.Text;
+            string fromtext = "thetexasjuggernaut@gmail.com";
+            string subjecttext = "Sun Moon Coffee Oder ID #" + newOrder.OrderID;
+            string bodytext = " Thank you " + newOrder.CustomerName + " for your purchase on " + now.ToString() + "." + "Your total is : $" + newOrder.OrderTotal  + " We appreciate the buisness and hope to see you soon!";
 
+
+            try
+            {
+                MailMessage message = new MailMessage(fromtext, totext, subjecttext, bodytext);
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Credentials = new System.Net.NetworkCredential("thetexasjuggernaut@gmail.com", password);
+                client.Send(message);
+            }
+            catch
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Email Failed" + "');", true);
+            }
             //clear the session 
             TotalLabel.Text = "Total:";
             nameTextBox.Text = "";
             OrderIdLabel.Text = "Order ID: ";
             Session.Clear();
-           string  totext = TextBox1.Text;
-            string fromtext = "Alexandershawn1@gmail.com";
-            string subjecttext = " Test";
-            string bodytext = " Items ";
-
-            MailMessage message = new MailMessage(totext, fromtext, subjecttext, bodytext);
-            message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            client.EnableSsl = true;
-            client.Credentials = new System.Net.NetworkCredential("thetexasjuggernaut@gmail.com", password);
-            client.Send(message);
+           
+          
 
         }
     }
