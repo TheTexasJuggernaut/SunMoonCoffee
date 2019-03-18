@@ -15,15 +15,25 @@ namespace SunMoonCoffee
         {
             if (!this.IsPostBack)
             {
-                //int sum;
                 for (int i = 0; i < orderSummaryView.Rows.Count; i++)
                 {
                     sum += Convert.ToDecimal(orderSummaryView.Rows[i].Cells[1].Text);
 
                 }
 
-                TotalLabel.Text = TotalLabel.Text + Convert.ToString(sum);
+                TotalLabel.Text = "Total: $" + String.Format("{0:0.00}", sum);
                 Session["orderTotal"] = sum;
+                OrderIdLabel.Text = "Order ID: " + Convert.ToInt32(Session["newOrderId"]).ToString();
+
+                //check if EditOrderId is valid
+                if (Session["EditOrderId"] != null)
+                {
+                    //get the order
+                    Order order = db.getOrder(Convert.ToInt32(Session["EditOrderId"].ToString()));
+
+                    //set the customer name and disable
+                    nameTextBox.Text = order.CustomerName;
+                }
             }
         }
 
@@ -36,8 +46,7 @@ namespace SunMoonCoffee
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("SunMoonCoffeeMenu.aspx");
-            Server.Transfer("SunMoonCoffeeMenu.aspx");
+            Response.Redirect("SunMoonCoffeeMenu.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -59,7 +68,13 @@ namespace SunMoonCoffee
             newOrder.Status = "Submitted";
 
             db.updateOrder(newOrder);
-            ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Your order was submitted!" + "');", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "Sun Moon Coffee", "alert('" + "Your order # " + Convert.ToInt32(Session["newOrderId"]).ToString() + " was submitted!" + "');", true);
+
+            //clear the session 
+            TotalLabel.Text = "Total:";
+            nameTextBox.Text = "";
+            OrderIdLabel.Text = "Order ID: ";
+            Session.Clear();
         }
     }
 }

@@ -25,6 +25,9 @@
         <asp:Label ID="TotalLabel" runat="server" Text="Total: "></asp:Label>
         <br />
         <br />
+        <asp:Label ID="OrderIdLabel" runat="server" Text="Order Id: "></asp:Label>
+        <br />
+        <br />
         <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="nameTextBox" runat="server" BackColor="#009933"></asp:TextBox>

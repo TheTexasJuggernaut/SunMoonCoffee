@@ -16,6 +16,18 @@ namespace SunMoonCoffee
             }
         }
 
+        public void removeOrderItem(int orderItemId)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                OrderItem item = (from o in context.OrderItems
+                                  where o.Id == orderItemId
+                                  select o).FirstOrDefault<OrderItem>();
+                context.OrderItems.Remove(item);
+                context.SaveChanges();
+            }
+        }
+
         public int addOrder(Order order)
         {
             using (var context = new ProductCatalogEntities_Orders())
@@ -49,6 +61,17 @@ namespace SunMoonCoffee
                 orderRecord.OrderTotal = order.OrderTotal;
                 orderRecord.Status = "Submitted";
                 context.SaveChanges();
+            }
+        }
+
+        public Order getOrder(int orderId)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                Order orderRecord = (from p in context.Orders
+                                     where p.OrderID == orderId
+                                     select p).FirstOrDefault<Order>();
+                return orderRecord;
             }
         }
     }
