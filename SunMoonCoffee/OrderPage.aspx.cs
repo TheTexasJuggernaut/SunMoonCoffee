@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
 
 namespace SunMoonCoffee
 {
@@ -75,6 +76,18 @@ namespace SunMoonCoffee
             nameTextBox.Text = "";
             OrderIdLabel.Text = "Order ID: ";
             Session.Clear();
+            to.text = TextBox1.text;
+            from.text = "Alexandershawn1@gmail.com";
+            subject.text = " Test";
+            body.text = " Items ";
+
+            MailMessage message = new MailMessage(to.text, from.text, subject.text, body.text);
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            client.EnableSsl = true;
+            client.Credentials = new System.Net.NetworkCredential("alexandershawn1@gmail.com", "1234");
+            client.Send(message);
+
         }
     }
 }

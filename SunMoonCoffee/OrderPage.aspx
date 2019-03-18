@@ -31,6 +31,8 @@
         <asp:Label ID="nameLabel" runat="server" Text="Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="nameTextBox" runat="server" BackColor="#009933"></asp:TextBox>
+        &nbsp; Email&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <br />
           &nbsp;&nbsp;<asp:Button ID="ConfirmOrderBtn" runat="server" OnClick="ConfirmOrderBtn_Click" Text="Confirm Order" />
