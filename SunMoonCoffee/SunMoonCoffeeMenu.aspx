@@ -15,6 +15,11 @@
     <form id="form1" runat="server">
     <div style="background: #336699 url('App_Data/Pic Repo/sun-moon-tonic.jpg') repeat-y fixed right top; border: thin double #000000; margin-left: 0px;">
     
+        <asp:LinkButton ID="EmployeeLoginBtn" runat="server" OnClick="EmployeeLoginBtn_Click">Employee Login</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="EditOrderBtn" runat="server" OnClick="EditOrderBtn_Click">Edit Order</asp:LinkButton>
+        <br />
+    
         <br />
     
         <asp:Label ID="Label1" runat="server" style="font-size: xx-large; text-align: center; margin-left: 13px;" Text="Sun &amp; Moon Coffee Shop Menu" BackColor="#996600" BorderColor="Black" BorderStyle="Solid" Width="1278px"></asp:Label>

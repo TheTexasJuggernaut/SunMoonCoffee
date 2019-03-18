@@ -86,6 +86,16 @@ namespace SunMoonCoffee
             //update orderList
             orderList.DataBind();
         }
+
+        protected void EmployeeLoginBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EmployeePage.aspx");
+        }
+
+        protected void EditOrderBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditOrderPage.aspx");
+        }
     }
 }
 

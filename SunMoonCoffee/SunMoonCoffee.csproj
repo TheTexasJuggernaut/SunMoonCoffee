@@ -81,6 +81,8 @@
     <Content Include="App_Data\Pic Repo\food-outline-filled.png" />
     <Content Include="App_Data\Pic Repo\Food_Beverages_Hot_drink_mug-512.png" />
     <Content Include="App_Data\Pic Repo\icon--purchase-order.png" />
+    <Content Include="EditOrderPage.aspx" />
+    <Content Include="EmployeePage.aspx" />
     <Content Include="Inventory.xml" />
     <Content Include="OrderPage.aspx" />
     <Content Include="OrdersModel.Context.tt">
@@ -115,6 +117,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="EditOrderPage.aspx.cs">
+      <DependentUpon>EditOrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditOrderPage.aspx.designer.cs">
+      <DependentUpon>EditOrderPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.designer.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>OrdersModel.tt</DependentUpon>
     </Compile>
