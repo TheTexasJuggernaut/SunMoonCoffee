@@ -63,7 +63,19 @@ namespace SunMoonCoffee
                 context.SaveChanges();
             }
         }
-
+        public void ProcessOrder(Order order)
+        {
+            using (var context = new ProductCatalogEntities_Orders())
+            {
+                Order orderRecord = (from p in context.Orders
+                                     where p.OrderID == order.OrderID
+                                     select p).FirstOrDefault<Order>();
+                orderRecord.CustomerName = order.CustomerName;
+                orderRecord.OrderTotal = order.OrderTotal;
+                orderRecord.Status = "Processed";
+                context.SaveChanges();
+            }
+        }
         public Order getOrder(int orderId)
         {
             using (var context = new ProductCatalogEntities_Orders())
