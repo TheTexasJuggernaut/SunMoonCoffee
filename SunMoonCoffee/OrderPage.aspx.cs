@@ -103,7 +103,7 @@ namespace SunMoonCoffee
             totext = TextBox1.Text;
             fromtext = "thetexasjuggernaut@gmail.com";
             subjecttext = "Sun Moon Coffee Oder ID #" + newOrder.OrderID;
-            bodytext = " Thank you " + newOrder.CustomerName + " for your purchase on " + now.ToString() + "." + "Your total is : $" + newOrder.OrderTotal + " We appreciate the buisness and hope to see you soon!";
+            bodytext = " Thank you " + newOrder.CustomerName + " for your purchase on " + now.ToString() + "." + "Your total is : $" + String.Format("{0:0.00}", newOrder.OrderTotal) + " We appreciate the buisness and hope to see you soon!";
 
             SENDER(totext, fromtext, subjecttext, bodytext, password);
 
